@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 33% 99%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 340 65% 87%;
+    --primary-foreground: 340 65% 30%;
+
+    --secondary: 212 76% 90%;
+    --secondary-foreground: 212 76% 32%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 120 25% 93%;
+    --accent-foreground: 120 25% 33%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 340 65% 87%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 240 33% 99%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 340 65% 87%;
+    --sidebar-primary-foreground: 340 65% 30%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 340 65% 87%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 340 65% 50%;
+    --primary-foreground: 340 65% 97%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 120 25% 20%;
+    --accent-foreground: 120 25% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 340 65% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 340 65% 50%;
+    --sidebar-primary-foreground: 340 65% 97%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 340 65% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-lora;
+  }
+}
+
+/* Custom classes for the project */
+@layer components {
+  .mom-card {
+    @apply bg-white rounded-2xl shadow-md p-6 transition-all hover:shadow-lg;
+  }
+  
+  .mom-input {
+    @apply rounded-xl border-2 border-mom-pink focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all;
+  }
+
+  .mom-button {
+    @apply px-6 py-3 rounded-xl text-white bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 transition-all font-semibold shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .mom-progress-bar {
+    @apply h-2.5 rounded-full bg-mom-pink/30 overflow-hidden;
+  }
+
+  .mom-progress-bar-fill {
+    @apply h-full bg-gradient-to-r from-pink-400 to-pink-500 rounded-full transition-all duration-500;
+  }
+}
+
+/* Accessibility focus styles */
+@layer utilities {
+  .focus-visible-ring {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+}
